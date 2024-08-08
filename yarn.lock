@@ -1531,6 +1531,26 @@ supports-color@^7.1.0:
   dependencies:
     has-flag "^4.0.0"
 
+survey-core@^1.11.9:
+  version "1.11.9"
+  resolved "https://registry.yarnpkg.com/survey-core/-/survey-core-1.11.9.tgz#f8ba9b6b810fd502759b918572aff46576e7333e"
+  integrity sha512-OD12lKCYTUIi9zgVtFrNHQCEHXr9Yp9O60c9pHkz4Rj0CZ0cUwVjK6wps3B9gWld0/g6qGQ0UrYtubCB7ysbLg==
+
+survey-creator-core@^1.11.9:
+  version "1.11.9"
+  resolved "https://registry.yarnpkg.com/survey-creator-core/-/survey-creator-core-1.11.9.tgz#b030c674885e8421c12d41f8fa818654818355fd"
+  integrity sha512-eaUQBkm59GjrYRniiRxPQhfoH3mDoYw4CzbduCpfve2+lGKsIeLlyZlJ1iBivu5cmka0cug4/2W9O+kAlEx8kg==
+
+survey-creator-react@^1.11.9:
+  version "1.11.9"
+  resolved "https://registry.yarnpkg.com/survey-creator-react/-/survey-creator-react-1.11.9.tgz#d4d9c96593be95c9ee063db873c39073adc5c1ed"
+  integrity sha512-6nsBB7tqcgKgk5dXvw1TQEz4ujF+aj1DpZXKlLtsI9tV30xQI/uHlB1lKmuE+/qk3L0IefI6rsPaDEm8xvpVtg==
+
+survey-react-ui@^1.11.9:
+  version "1.11.9"
+  resolved "https://registry.yarnpkg.com/survey-react-ui/-/survey-react-ui-1.11.9.tgz#50d671f6e7dcef5aaf0734f52707c44e092f797a"
+  integrity sha512-WTGel9gx+lOawKr78Mn/3SoF4YADh3NqmMlewypFPRobiJANdTHICt6Uv0qJ24o+k58AVIv2nqbkTskN8Zf2ng==
+
 text-table@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/text-table/-/text-table-0.2.0.tgz#7f5ee823ae805207c00af2df4a84ec3fcfa570b4"
