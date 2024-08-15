@@ -14,37 +14,31 @@ const creatorOptions = {
 const defaultJson = {
     "pages": [
       {
-        "name": "page1",
+        "name": "Patiant Questions",
         "elements": [
           {
             "type": "panel",
             "name": "personal-information",
-            "title": "Personal Information",
+            "title": "Allergies & reactive considerations",
             "state": "expanded",
             "elements": [
               {
                 "type": "text",
                 "name": "first-name",
-                "title": "First name",
-                "isRequired": true
-              },
-              {
-                "type": "text",
-                "name": "first-name",
-                "title": "First name",
+                "title": "Allergy type",
                 "isRequired": true
               },
               {
                 "type": "text",
                 "name": "last-name",
                 "startWithNewLine": false,
-                "title": "Last name",
+                "title": "Description",
                 "isRequired": true
               },
               {
                 "type": "text",
-                "name": "birthdate",
-                "title": "Birthdate",
+                "name": "Date",
+                "title": "Date",
                 "isRequired": true,
                 "inputType": "date",
                 "autocomplete": "bday",
@@ -54,7 +48,7 @@ const defaultJson = {
                 "type": "dropdown",
                 "name": "country",
                 "startWithNewLine": false,
-                "title": "Country",
+                "title": "Allergy category",
                 "choicesByUrl": {
                   "url": "https://surveyjs.io/api/CountriesExample",
                   "valueName": "name"
@@ -65,7 +59,7 @@ const defaultJson = {
           {
             "type": "panel",
             "name": "contact-information",
-            "title": "Contact Information",
+            "title": "Patiant Details",
             "state": "expanded",
             "elements": [
               {
@@ -90,13 +84,58 @@ const defaultJson = {
                 "title": "Skype"
               }
             ]
+          },
+          {
+            "type": "paneldynamic",
+            "name": "employment-history",
+            "title": "Sorcial & personal summary",
+            "templateElements": [
+              {
+                "type": "text",
+                "name": "company",
+                "title": "personal summary",
+                "isRequired": true
+              },
+              {
+                "type": "multipletext",
+                "name": "employment-dates",
+                "title": "Sorcial details",
+                "items": [
+                  {
+                    "name": "start",
+                    "isRequired": true,
+                    "inputType": "date",
+                    "title": "Start",
+                    "maxValueExpression": "today()"
+                  },
+                  {
+                    "name": "end",
+                    "isRequired": true,
+                    "inputType": "date",
+                    "title": "End",
+                    "minValueExpression": "{panel.employment-dates.start}",
+                    "maxValueExpression": "today()"
+                  }
+                ]
+              },
+              {
+                "type": "expression",
+                "name": "days-employed",
+                "title": "Days employed by {panel.company}:",
+                "visibleIf": "{panel.company} notempty and {panel.employment-dates.start} notempty and {panel.employment-dates.end} notempty",
+                "titleLocation": "left",
+                "expression": "diffDays({panel.employment-dates.start}, {panel.employment-dates.end})"
+              }
+            ],
+            "panelCount": 1,
+            "panelAddText": "Add company"
           }
         ]
       }
     ],
     "showQuestionNumbers": "off",
     "questionErrorLocation": "bottom"
-  };
+  }
 
 export function SurveyCreatorWidget() {
   const creator = new SurveyCreator(creatorOptions);
